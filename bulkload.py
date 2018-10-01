@@ -1,5 +1,5 @@
 import boto3
-session = boto3.session.Session(region_name= 'us-east-1')
+session = boto3.session.Session(region_name= 'us-west-2')
 dynamodb = session.resource('dynamodb')
 
 
