@@ -6,7 +6,7 @@ parser.add_argument("-t", "--table", help="DynamoDB table",
                     default='TestTable')
 parser.add_argument(
     "-r", "--region", help="AWS Region where your DynamoDB table sits",
-    default='us-east-1'
+    default='us-west-2'
 )
 args = parser.parse_args()
 
