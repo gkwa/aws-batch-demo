@@ -1,9 +1,20 @@
+import argparse
 import boto3
-session = boto3.session.Session(region_name= 'us-west-2')
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-t", "--table", help="DynamoDB table",
+                    default='TestTable')
+parser.add_argument(
+    "-r", "--region", help="AWS Region where your DynamoDB table sits",
+    default='us-east-1'
+)
+args = parser.parse_args()
+
+session = boto3.session.Session(region_name=args.region)
 dynamodb = session.resource('dynamodb')
 
 
-table = dynamodb.Table("TestTable")
+table = dynamodb.Table(args.table)
 
 filler = "x" * 1000
 
