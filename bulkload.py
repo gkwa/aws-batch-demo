@@ -10,7 +10,8 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-session = boto3.session.Session(region_name=args.region)
+
+session = boto3.session.Session(region_name=args.region.strip())
 dynamodb = session.resource('dynamodb')
 
 
